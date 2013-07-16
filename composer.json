@@ -1,0 +1,13 @@
+{
+    "name": "grogy/emails",
+    "description": "Automatic emails downloader.",
+    "authors": [
+        {
+            "name": "Václav Makeš",
+            "email": "info@makes.cz"
+        }
+    ],
+    "require": {
+        "dg/dibi": "v2.1.0"
+    }
+}
