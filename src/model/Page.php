@@ -22,4 +22,15 @@ class Page extends BaseModel
 	{
 
 	}
+
+
+
+	/**
+	 * Save URLs
+	 * @param array $URLs
+	 */
+	public function saveURLs(array $URLs)
+	{
+
+	}
 }

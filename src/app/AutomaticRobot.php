@@ -37,7 +37,9 @@ class AutomaticRobot
 		$pageURL = $this->pageModel->nextPage();
 		$pageHTML = $this->curl->get($pageURL);
 		$emails = $this->parser->getEmails($pageHTML);
+		$URLs = $this->parser->getURLs($pageHTML);
 		$this->pageModel->saveEmails($emails);
+		$this->pageModel->saveURLs($URLs);
 
 		echo "Download emails is complet.\n";
 	}

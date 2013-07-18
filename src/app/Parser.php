@@ -6,10 +6,22 @@ class Parser
 {
 	/**
 	 * Get all mails from string
-	 * @param $str
+	 * @param string $str
 	 * @return array
 	 */
 	public function getEmails($str)
+	{
+		return array();
+	}
+
+
+
+	/**
+	 * Get all URL from string
+	 * @param string $str
+	 * @return array
+	 */
+	public function getURLs($str)
 	{
 		return array();
 	}
