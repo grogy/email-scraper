@@ -11,17 +11,28 @@ class AutomaticRobot
 	 */
 	private $pageModel;
 
+	/**
+	 * @var Parser
+	 */
+	private $parser;
 
 
-	public function __construct(Page $pageModel)
+
+	public function __construct(Page $pageModel, Parser $parser)
 	{
 		$this->pageModel = $pageModel;
+		$this->parser = $parser;
 	}
 
 
 
 	public function run()
 	{
-		echo "Run..\n";
+		$pageURL = $this->pageModel->nextPage();
+		$pageHTML = "";// $this->getHtmlContent($pageURL);
+		$emails = $this->parser->getEmails($pageHTML);
+		$this->pageModel->saveEmails($emails);
+
+		echo "Download emails is complet.\n";
 	}
 }

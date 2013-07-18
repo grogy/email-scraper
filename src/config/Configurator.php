@@ -3,6 +3,7 @@
 namespace Project\Config;
 
 use Project\App\AutomaticRobot;
+use Project\App\Parser;
 use Project\Model\Page;
 
 class Configurator
@@ -16,6 +17,7 @@ class Configurator
 	}
 
 
+
 	/**
 	 * @return AutomaticRobot
 	 */
@@ -26,9 +28,22 @@ class Configurator
 
 
 
+	/**
+	 * @return Page
+	 */
 	public function getModelPage()
 	{
 		return new Page($this->getDatabase());
+	}
+
+
+
+	/**
+	 * @return Parser
+	 */
+	public function getParser()
+	{
+		return new Parser();
 	}
 
 
