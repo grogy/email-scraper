@@ -10,5 +10,8 @@
     "require": {
         "dg/dibi": "v2.1.0",
 		"shuber/curl": "dev-master"
-    }
+    },
+	"require-dev": {
+		"apigen/apigen": "2.8.0"
+	}
 }
