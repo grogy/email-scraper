@@ -8,6 +8,7 @@
         }
     ],
     "require": {
-        "dg/dibi": "v2.1.0"
+        "dg/dibi": "v2.1.0",
+		"shuber/curl": "v1.0.0"
     }
 }

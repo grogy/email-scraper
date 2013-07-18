@@ -23,7 +23,11 @@ class Configurator
 	 */
 	public function getAppAutomaticRobot()
 	{
-		return new AutomaticRobot($this->getModelPage(), $this->getParser());
+		return new AutomaticRobot(
+			$this->getModelPage(),
+			$this->getParser(),
+			$this->getCurl()
+		);
 	}
 
 
@@ -44,6 +48,16 @@ class Configurator
 	public function getParser()
 	{
 		return new Parser();
+	}
+
+
+
+	/**
+	 * @return \Curl
+	 */
+	public function getCurl()
+	{
+		return new \Curl();
 	}
 
 

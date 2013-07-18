@@ -16,12 +16,18 @@ class AutomaticRobot
 	 */
 	private $parser;
 
+	/**
+	 * @var \Curl
+	 */
+	private $curl;
 
 
-	public function __construct(Page $pageModel, Parser $parser)
+
+	public function __construct(Page $pageModel, Parser $parser, \Curl $curl)
 	{
 		$this->pageModel = $pageModel;
 		$this->parser = $parser;
+		$this->curl = $curl;
 	}
 
 
@@ -29,7 +35,7 @@ class AutomaticRobot
 	public function run()
 	{
 		$pageURL = $this->pageModel->nextPage();
-		$pageHTML = "";// $this->getHtmlContent($pageURL);
+		$pageHTML = $this->curl->get($pageURL);
 		$emails = $this->parser->getEmails($pageHTML);
 		$this->pageModel->saveEmails($emails);
 

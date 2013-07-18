@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f3d095f3aaec2f8315d50af493d9df90",
+    "hash": "d5cde1a7fa459172c23d749b71395ccb",
     "packages": [
         {
             "name": "dg/dibi",
@@ -55,6 +55,34 @@
                 "sqlite"
             ],
             "time": "2013-06-23 00:34:14"
+        },
+        {
+            "name": "shuber/curl",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hamstar/curl",
+                "reference": "v1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/hamstar/curl/zipball/v1.0.0",
+                "reference": "v1.0.0",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Wrapper for Curl",
+            "keywords": [
+                "bot",
+                "curl",
+                "scraper",
+                "spider"
+            ],
+            "time": "2012-06-02 13:57:42"
         }
     ],
     "packages-dev": [
