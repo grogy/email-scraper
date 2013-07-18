@@ -23,7 +23,7 @@ class Configurator
 	 */
 	public function getAppAutomaticRobot()
 	{
-		return new AutomaticRobot($this->getModelPage());
+		return new AutomaticRobot($this->getModelPage(), $this->getParser());
 	}
 
 
