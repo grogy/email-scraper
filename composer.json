@@ -9,6 +9,6 @@
     ],
     "require": {
         "dg/dibi": "v2.1.0",
-		"shuber/curl": "v1.0.0"
+		"shuber/curl": "dev-master"
     }
 }

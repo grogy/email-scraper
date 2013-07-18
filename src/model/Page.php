@@ -20,6 +20,6 @@ class Page extends BaseModel
 	 */
 	public function saveEmails(array $emails)
 	{
-		
+
 	}
 }

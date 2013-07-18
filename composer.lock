@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d5cde1a7fa459172c23d749b71395ccb",
+    "hash": "0245d57e1c516c17895ec8d88c827051",
     "packages": [
         {
             "name": "dg/dibi",
@@ -58,19 +58,24 @@
         },
         {
             "name": "shuber/curl",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hamstar/curl",
-                "reference": "v1.0.0"
+                "url": "https://github.com/hamstar/curl.git",
+                "reference": "03556aa2811cda00bbc4e587c63dac1bf8853167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/hamstar/curl/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/hamstar/curl/zipball/03556aa2811cda00bbc4e587c63dac1bf8853167",
+                "reference": "03556aa2811cda00bbc4e587c63dac1bf8853167",
                 "shasum": ""
             },
             "type": "library",
+            "autoload": {
+                "files": [
+                    "curl.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -82,7 +87,7 @@
                 "scraper",
                 "spider"
             ],
-            "time": "2012-06-02 13:57:42"
+            "time": "2012-09-29 12:28:21"
         }
     ],
     "packages-dev": [
@@ -92,9 +97,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "shuber/curl": 20
+    },
     "platform": [
 
     ],
