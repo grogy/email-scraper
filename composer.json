@@ -12,6 +12,7 @@
 		"shuber/curl": "dev-master"
     },
 	"require-dev": {
-		"apigen/apigen": "2.8.0"
+		"apigen/apigen": "2.8.0",
+		"nette/tester": "dev-master"
 	}
 }
