@@ -7,7 +7,7 @@ require_once __DIR__ . '/bootstrap.php';
 /**
  * Testing helper - \Project\App\Parser
  */
-class ParserTest extends Tester\TestCase
+class ParserEmailTest extends Tester\TestCase
 {
 	/**
 	 * @var \Project\App\Parser
@@ -43,5 +43,5 @@ class ParserTest extends Tester\TestCase
 	}
 }
 
-$test = new ParserTest();
+$test = new ParserEmailTest();
 $test->run();
