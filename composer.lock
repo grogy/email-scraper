@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "21935df96a1233e97c3ddfd763c66a71",
+    "hash": "019407d898d36d23da94b175a455e771",
     "packages": [
         {
             "name": "dg/dibi",
@@ -379,16 +379,16 @@
         },
         {
             "name": "nette/tester",
-            "version": "dev-master",
+            "version": "v0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tester.git",
-                "reference": "1a6abfb509e748e6dd601c0d298c5c93679092da"
+                "reference": "v0.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tester/zipball/1a6abfb509e748e6dd601c0d298c5c93679092da",
-                "reference": "1a6abfb509e748e6dd601c0d298c5c93679092da",
+                "url": "https://api.github.com/repos/nette/tester/zipball/v0.9.2",
+                "reference": "v0.9.2",
                 "shasum": ""
             },
             "require": {
@@ -426,7 +426,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2013-07-18 20:39:33"
+            "time": "2013-07-20 19:08:11"
         }
     ],
     "aliases": [
@@ -434,8 +434,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "shuber/curl": 20,
-        "nette/tester": 20
+        "shuber/curl": 20
     },
     "platform": [
 

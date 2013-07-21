@@ -13,6 +13,6 @@
     },
 	"require-dev": {
 		"apigen/apigen": "2.8.0",
-		"nette/tester": "dev-master"
+		"nette/tester": "v0.9.2"
 	}
 }
