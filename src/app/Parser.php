@@ -11,10 +11,16 @@ class Parser
 	 */
 	public function getEmails($str)
 	{
-		$pattern  = "/[a-zA-Z0-9]@[a-zA-Z0-9]\.[a-z]/";
+		$pattern  = "/[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-z]+/";
 		preg_match_all($pattern, $str, $matches);
 
-		return $matches;
+		$emails = array();
+
+		foreach ($matches[0] as $m) {
+			$emails[] = $m;
+		}
+
+		return $emails;
 	}
 
 
