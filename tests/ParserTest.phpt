@@ -23,9 +23,11 @@ class ParserTest extends Tester\TestCase
 
 
 
-	public function testOK()
+	public function testEmailBase()
 	{
-		Assert::false(false);
+		$expected = array("name@domain.com");
+		$actual = $this->parser->getEmails("name@domain.com");
+		Assert::same($expected, $actual);
 	}
 }
 
