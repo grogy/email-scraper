@@ -5,7 +5,7 @@ namespace Project\Model;
 class Page extends BaseModel
 {
 	/**
-	 * Get next adress for scanning
+	 * Get next address for scanning
 	 */
 	public function nextPage()
 	{
