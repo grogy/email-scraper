@@ -3,7 +3,7 @@ run:
 
 
 test:
-	php ./vendor/nette/tester/Tester/tester -j 10 ./;
+	php ./vendor/nette/tester/Tester/tester -j 10 ./tests;
 
 
 doc:
