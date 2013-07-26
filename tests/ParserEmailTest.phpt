@@ -5,7 +5,7 @@ use Tester\Assert;
 require_once __DIR__ . '/bootstrap.php';
 
 /**
- * Testing helper - \Project\App\Parser
+ * Testing helper for parse emails from HTML
  */
 class ParserEmailTest extends Tester\TestCase
 {
@@ -39,6 +39,15 @@ class ParserEmailTest extends Tester\TestCase
 			"name2@domain2.net"
 		);
 		$actual = $this->parser->getEmails("Text and text.. name@domain.com and email: name2@domain2.net");
+		Assert::same($expected, $actual);
+	}
+
+
+
+	public function testDot()
+	{
+		$expected = array("name.dot@domain.com");
+		$actual = $this->parser->getEmails("name@domain.com");
 		Assert::same($expected, $actual);
 	}
 }
