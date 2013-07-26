@@ -18,7 +18,7 @@ class Page extends BaseModel implements IModel
 
 		$queryUpdate = "
 			UPDATE pages
-			SET last_scan = ''
+			SET last_scan = 1
 			WHERE id = %i";
 		$this->db->query($queryUpdate, $page["id"]);
 

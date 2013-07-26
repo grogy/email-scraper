@@ -38,11 +38,13 @@ class AutomaticRobot
 		$pageURL = $this->getUrl();
 		$pageHTML = $this->curl->get($pageURL);
 		$emails = $this->parser->getEmails($pageHTML);
+		$countEmails = count($emails);
 		$URLs = $this->parser->getURLs($pageHTML);
 		$this->model->saveEmails($emails);
 		$this->model->saveURLs($URLs);
 
-		echo "Download emails from address '$pageURL' is complet.\n";
+		echo "Download emails from address '$pageURL' is complete.\n";
+		echo "There are $countEmails records.\n";
 	}
 
 
