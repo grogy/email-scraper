@@ -3,7 +3,7 @@ run:
 
 
 test:
-	sh ./tests/run-tests.sh;
+	php ./vendor/nette/tester/Tester/tester -j 10 ./;
 
 
 doc:
@@ -12,5 +12,4 @@ doc:
 
 prepare:
 	chmod +x ./dev/documentation.sh;
-	chmod +x ./tests/run-tests.sh;
 	composer install --dev;
