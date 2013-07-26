@@ -23,7 +23,7 @@ class ParserEmailTest extends Tester\TestCase
 
 
 
-	public function testEmailBase()
+	public function testBase()
 	{
 		$expected = array("name@domain.com");
 		$actual = $this->parser->getEmails("name@domain.com");
@@ -32,7 +32,7 @@ class ParserEmailTest extends Tester\TestCase
 
 
 
-	public function testEmailsInText()
+	public function testInText()
 	{
 		$expected = array(
 			"name@domain.com",
