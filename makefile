@@ -1,3 +1,7 @@
+run:
+	php -f ./src/index.php
+
+
 test:
 	sh ./tests/run-tests.sh;
 
