@@ -35,17 +35,26 @@ class AutomaticRobot
 
 	public function run()
 	{
-		$pageURL = $this->model->nextPage();
-		if (empty($pageURL)) {
-			echo "List of web address is empty.\n";
-			exit;
-		}
+		$pageURL = $this->getUrl();
 		$pageHTML = $this->curl->get($pageURL);
 		$emails = $this->parser->getEmails($pageHTML);
 		$URLs = $this->parser->getURLs($pageHTML);
 		$this->model->saveEmails($emails);
 		$this->model->saveURLs($URLs);
 
-		echo "Download emails is complet.\n";
+		echo "Download emails from address '$pageURL' is complet.\n";
+	}
+
+
+
+	private function getUrl()
+	{
+		$pageURL = $this->model->nextPage();
+		if (empty($pageURL)) {
+			echo "List of web address is empty.\n";
+			exit;
+		}
+
+		return $pageURL;
 	}
 }

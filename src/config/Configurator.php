@@ -69,7 +69,7 @@ class Configurator
 	{
 		return array(
 			"driver" => "sqlite3",
-			"database" => SRC_DIR . "/../db/db.sqlite",
+			"database" => SRC_DIR . "/../../emails.sqlite",
 		);
 	}
 }

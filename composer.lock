@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0a7e9a301ef887c2269187b46f2d3747",
+    "hash": "93f006f7d47a29223ad8e267a928b92b",
     "packages": [
         {
             "name": "composer/installers",
@@ -127,34 +127,6 @@
                 "sqlite"
             ],
             "time": "2013-06-23 00:34:14"
-        },
-        {
-            "name": "keboola/csv",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/keboola/php-csv.git",
-                "reference": "1.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/keboola/php-csv/zipball/1.1.0",
-                "reference": "1.1.0",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.19"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Keboola\\Csv": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Keboola CSV reader and writer",
-            "homepage": "http://keboola.com",
-            "time": "2013-04-23 11:07:05"
         },
         {
             "name": "maxon-design/exceptions",
@@ -362,7 +334,7 @@
                 "php": ">=5.0.0"
             },
             "require-dev": {
-                "nette/tester": "@dev"
+                "nette/tester": "0.9.*"
             },
             "type": "library",
             "autoload": {
@@ -395,7 +367,7 @@
                 "wiki",
                 "xhtml"
             ],
-            "time": "2013-07-15 12:17:25"
+            "time": "2013-07-19 22:05:37"
         },
         {
             "name": "kukulich/fshl",
@@ -562,7 +534,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2013-07-20 19:08:11"
+            "time": "2013-07-20 23:51:40"
         }
     ],
     "aliases": [
