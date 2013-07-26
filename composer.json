@@ -10,7 +10,8 @@
     "require": {
         "dg/dibi": "v2.1.0",
 		"shuber/curl": "dev-master",
-		"maxon-design/exceptions": "v1.2.0"
+		"maxon-design/exceptions": "v1.2.0",
+		"keboola/csv": "1.1.0"
     },
 	"require-dev": {
 		"apigen/apigen": "2.8.0",
