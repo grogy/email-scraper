@@ -2,7 +2,7 @@
 
 namespace Project\Model;
 
-class Page extends BaseModel
+class Page extends BaseModel implements IModel
 {
 	/**
 	 * Get next address for scanning

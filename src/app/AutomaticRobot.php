@@ -2,14 +2,15 @@
 
 namespace Project\App;
 
+use Project\Model\IModel;
 use Project\Model\Page;
 
 class AutomaticRobot
 {
 	/**
-	 * @var Page
+	 * @var IModel
 	 */
-	private $pageModel;
+	private $model;
 
 	/**
 	 * @var Parser
@@ -23,9 +24,9 @@ class AutomaticRobot
 
 
 
-	public function __construct(Page $pageModel, Parser $parser, \Curl $curl)
+	public function __construct(IModel $model, Parser $parser, \Curl $curl)
 	{
-		$this->pageModel = $pageModel;
+		$this->model = $model;
 		$this->parser = $parser;
 		$this->curl = $curl;
 	}
@@ -34,12 +35,16 @@ class AutomaticRobot
 
 	public function run()
 	{
-		$pageURL = $this->pageModel->nextPage();
+		$pageURL = $this->model->nextPage();
+		if (empty($pageURL)) {
+			echo "List of web address is empty.\n";
+			exit;
+		}
 		$pageHTML = $this->curl->get($pageURL);
 		$emails = $this->parser->getEmails($pageHTML);
 		$URLs = $this->parser->getURLs($pageHTML);
-		$this->pageModel->saveEmails($emails);
-		$this->pageModel->saveURLs($URLs);
+		$this->model->saveEmails($emails);
+		$this->model->saveURLs($URLs);
 
 		echo "Download emails is complet.\n";
 	}
