@@ -9,7 +9,8 @@
     ],
     "require": {
         "dg/dibi": "v2.1.0",
-		"shuber/curl": "dev-master"
+		"shuber/curl": "dev-master",
+		"maxon-design/exceptions": "v1.2.0"
     },
 	"require-dev": {
 		"apigen/apigen": "2.8.0",
