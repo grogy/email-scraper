@@ -50,6 +50,15 @@ class ParserEmailTest extends Tester\TestCase
 		$actual = $this->parser->getEmails("name.dot@domain.com");
 		Assert::same($expected, $actual);
 	}
+
+
+
+	public function testUnderline()
+	{
+		$expected = array("one_two@domain.com");
+		$actual = $this->parser->getEmails("one_two@domain.com");
+		Assert::same($expected, $actual);
+	}
 }
 
 $test = new ParserEmailTest();
