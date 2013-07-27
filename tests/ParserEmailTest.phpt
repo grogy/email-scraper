@@ -41,6 +41,15 @@ class ParserEmailTest extends Tester\TestCase
 
 
 
+	public function testTwoDotInDomain()
+	{
+		$expected = array("name@domain.com.com");
+		$actual = $this->parser->getEmails("name@domain.com.com");
+		Assert::same($expected, $actual);
+	}
+
+
+
 	public function testInText()
 	{
 		$expected = array(
