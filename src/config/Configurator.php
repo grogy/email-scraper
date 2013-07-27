@@ -36,6 +36,7 @@ class Configurator
 	public function getAppAutomaticRobot()
 	{
 		$this->readConfiguration();
+		$this->checkDatabaseStructure();
 
 		return new AutomaticRobot(
 			$this->getModelPage(),
@@ -92,5 +93,33 @@ class Configurator
 	private function readConfiguration()
 	{
 		$this->configuration = parse_ini_file($this->pathToConfiguration, TRUE);
+	}
+
+
+
+	private function checkDatabaseStructure()
+	{
+		$query = "
+			SELECT name
+			FROM sqlite_master
+			WHERE type='table' AND name='pages'";
+		$table = $this->getDatabase()->query($query)->fetchSingle();
+
+		if (empty($table))
+			$this->createDatabaseSchema();
+	}
+
+
+
+	private function createDatabaseSchema()
+	{
+		$this->getDatabase()->loadFile(SRC_DIR . "/model/database-schema.sql");
+
+		$defaultPageForScan = $this->configuration["defaults"]["www"];
+		$query = "
+			INSERT INTO pages (url, last_scan) VALUES (%s, '');";
+		$this->getDatabase()->query($query, $defaultPageForScan);
+
+		echo "The database schema was created.\n";
 	}
 }
