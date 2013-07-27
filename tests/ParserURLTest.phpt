@@ -74,6 +74,19 @@ class ParserURLTest extends Tester\TestCase
 		$actual = $this->parser->getURLs("http://www.domain.com/str/str2/str3?search=str");
 		Assert::same($expected, $actual);
 	}
+
+
+
+	public function testSearchInHTML()
+	{
+		$expected = array(
+			"http://www.domain.com",
+			"http://www.domain2.com",
+		);
+		$htmlForSearch = file_get_contents(__DIR__ . "/input/ParseUrlTest.html");
+		$actual = $this->parser->getURLs($htmlForSearch);
+		Assert::same($expected, $actual);
+	}
 }
 
 $test = new ParserURLTest();
