@@ -10,19 +10,19 @@ class Page extends BaseModel implements IModel
 	public function nextPage()
 	{
 		$query = "
-			SELECT id, url
+			SELECT url
 			FROM pages
 			WHERE last_scan = ''
 			LIMIT 1";
-		$page = $this->db->query($query)->fetch();
+		$page = $this->db->query($query)->fetchSingle();
 
 		$queryUpdate = "
 			UPDATE pages
 			SET last_scan = 1
-			WHERE id = %i";
-		$this->db->query($queryUpdate, $page["id"]);
+			WHERE url = %s";
+		$this->db->query($queryUpdate, $page);
 
-		return $page["url"];
+		return $page;
 	}
 
 
@@ -33,11 +33,12 @@ class Page extends BaseModel implements IModel
 	 */
 	public function saveEmails(array $emails)
 	{
+		$query = "
+			INSERT OR IGNORE INTO emails (address)
+			VALUES (%s)";
+
 		foreach ($emails as $email) {
-			$arr = array(
-				"address" => $email
-			);
-			$this->db->insert("emails", $arr)->execute();
+			$this->db->query($query, $email);
 		}
 	}
 
@@ -49,11 +50,12 @@ class Page extends BaseModel implements IModel
 	 */
 	public function saveURLs(array $URLs)
 	{
-		foreach ($URLs as $url) {
-			$arr = array(
-				"url" => $url
-			);
-			$this->db->insert("pages", $arr)->execute();
+		$query = "
+			INSERT OR IGNORE INTO pages (url, last_scan)
+			VALUES (%s, '')";
+
+		foreach ($URLs as $URL) {
+			$this->db->query($query, $URL);
 		}
 	}
 }
