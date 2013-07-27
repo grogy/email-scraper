@@ -47,6 +47,33 @@ class ParserURLTest extends Tester\TestCase
 		$actual = $this->parser->getURLs("https://www.domain.com");
 		Assert::same($expected, $actual);
 	}
+
+
+
+	public function testAddressWithGetParameter()
+	{
+		$expected = array("http://www.domain.com?param=12");
+		$actual = $this->parser->getURLs("http://www.domain.com?param=12");
+		Assert::same($expected, $actual);
+	}
+
+
+
+	public function testLongAddress()
+	{
+		$expected = array("http://www.domain.com/str/str2/str3");
+		$actual = $this->parser->getURLs("http://www.domain.com/str/str2/str3");
+		Assert::same($expected, $actual);
+	}
+
+
+
+	public function testLongAddressWithParameter()
+	{
+		$expected = array("http://www.domain.com/str/str2/str3?search=str");
+		$actual = $this->parser->getURLs("http://www.domain.com/str/str2/str3?search=str");
+		Assert::same($expected, $actual);
+	}
 }
 
 $test = new ParserURLTest();

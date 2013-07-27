@@ -32,7 +32,8 @@ class Parser
 	 */
 	public function getURLs($str)
 	{
-		$pattern  = "/(http:\/\/|https:\/\/|)www\.[a-zA-Z0-9]+\.[a-z]+/";
+		$pattern  = "/(http:\/\/|https:\/\/|)www\.[a-zA-Z0-9]+\.[a-z]+()*/";
+		$pattern  = "#\b(https?://|)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#";
 		preg_match_all($pattern, $str, $matches);
 
 		$URLs = array();
