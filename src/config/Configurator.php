@@ -9,6 +9,18 @@ use Project\Model\Page;
 class Configurator
 {
 	/**
+	 * @var array configuration settings
+	 */
+	private $configuration;
+
+	/**
+	 * @var string path to file with configuration
+	 */
+	private $pathToConfiguration = "config.ini";
+
+
+
+	/**
 	 * @return \DibiConnection
 	 */
 	public function getDatabase()
@@ -23,6 +35,8 @@ class Configurator
 	 */
 	public function getAppAutomaticRobot()
 	{
+		$this->readConfiguration();
+
 		return new AutomaticRobot(
 			$this->getModelPage(),
 			$this->getParser(),
@@ -69,7 +83,14 @@ class Configurator
 	{
 		return array(
 			"driver" => "sqlite3",
-			"database" => SRC_DIR . "/../../emails.sqlite",
+			"database" => $this->configuration["database"]["path"],
 		);
+	}
+
+
+
+	private function readConfiguration()
+	{
+		$this->configuration = parse_ini_file($this->pathToConfiguration, TRUE);
 	}
 }
