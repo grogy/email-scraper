@@ -1,6 +1,10 @@
 {
     "name": "grogy/emails",
     "description": "Automatic emails downloader.",
+	"license": [
+		"GPL-2.0",
+		"GPL-3.0"
+	],
     "authors": [
         {
             "name": "Václav Makeš",
