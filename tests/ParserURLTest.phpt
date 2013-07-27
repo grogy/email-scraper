@@ -82,6 +82,7 @@ class ParserURLTest extends Tester\TestCase
 		$expected = array(
 			"http://www.domain.com",
 			"http://www.domain2.com",
+			"www.domain3.com/str?search=aa",
 		);
 		$htmlForSearch = file_get_contents(__DIR__ . "/input/ParseUrlTest.html");
 		$actual = $this->parser->getURLs($htmlForSearch);
