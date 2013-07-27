@@ -46,6 +46,10 @@ class ParserEmailTest extends Tester\TestCase
 		$expected = array("name@domain.com.com");
 		$actual = $this->parser->getEmails("name@domain.com.com");
 		Assert::same($expected, $actual);
+
+		$expected = array("name@domain.com2.com");
+		$actual = $this->parser->getEmails("name@domain.com2.com");
+		Assert::same($expected, $actual);
 	}
 
 
