@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH="/var/www/emails"
+PATH="."
 SRC="${PATH}/vendor/apigen/apigen/apigen.php"
 DOC="${PATH}/doc"
 
